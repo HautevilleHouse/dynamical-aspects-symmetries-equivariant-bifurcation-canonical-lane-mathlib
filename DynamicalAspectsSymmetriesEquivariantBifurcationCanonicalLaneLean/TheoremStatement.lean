@@ -63,7 +63,11 @@ theorem manifold_constrained_theorem_closed_checked :
 
 theorem theorem_layer_internalized_checked :
     TheoremLayerInternalized := by
-  exact And.intro rfl (And.intro rfl (And.intro classical_source_boundary_carried_checked manifold_constrained_theorem_closed_checked))
+  refine And.intro ?_ (And.intro ?_ (And.intro ?_ ?_))
+  · exact theorem_statement_source_key_checked
+  · exact theorem_statement_certificate_lane_checked
+  · exact classical_source_boundary_carried_checked
+  · exact manifold_constrained_theorem_closed_checked
 
 end DynamicalAspectsSymmetriesEquivariantBifurcationCanonicalLaneLean
 end HautevilleHouse
